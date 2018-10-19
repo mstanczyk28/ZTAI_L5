@@ -1,0 +1,68 @@
+<section id="container">
+
+  <header class="header black-bg">
+    <div class="nav notify-row" id="top_menu">
+      <ul class="nav navbar-header">
+        <li><a href="index.html" class="logo"><b><span>STRONA GŁÓWNA</span></b></a></li>
+        <li><a href="blog.html" class="logo"><b>Blog</b></a></li>
+        <li><a href="quiz.html" class="logo"><b>Quiz</b></a></li>
+        <li><a href="contact.html" class="logo"><b>Kontakt</b></a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section id="main-content">
+    <section class="wrapper">
+      <div class="contact-form">
+        <form>
+          <h3>Uzupełnij dane:</h3>
+          <div class="form-group">
+            <label for="firstName">Imię:</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Podaj imię">
+          </div>
+          <div class="form-group">
+            <label for="lastName">Nazwisko:</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Podaj nazwisko">
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" class="form-control" id="email" placeholder="Podaj e-mail">
+          </div>
+          <legend class="col-form-label">Płeć</legend>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="male" id="male" value="option1">
+            <label class="form-check-label" for="male">Mężczyzna</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="female" id="female" value="option2">
+            <label class="form-check-label" for="female">Kobieta</label>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Wiadomość</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="age">
+            <label for="formGroupExampleInput">Wiek:</label>
+            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="">
+          </div>
+          <div class="state">
+            <label for="inputState">Stan cywilny</label>
+            <select id="inputState" class="form-control">
+              <option></option>
+              <option>panna</option>
+              <option>kawaler</option>
+            </select>
+          </div>
+          <div class="form-group row button">
+            <div class="col-sm-10">
+              <button class="btn btn-primary" type="button">Wyczyść</button>
+              <button class="btn btn-primary pull-right" type="submit">Wyślij</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </section>
+
+</section>
