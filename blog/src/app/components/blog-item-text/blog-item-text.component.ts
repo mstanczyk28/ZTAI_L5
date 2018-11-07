@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-blog-item-text',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogItemTextComponent implements OnInit {
 
+  @Input('text') text : string;
+  @Output() titleChanged = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
