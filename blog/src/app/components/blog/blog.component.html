@@ -1,3 +1,12 @@
-<div *ngFor=""let item in item>
+<div *ngFor="let item of items | filter:filterText">
   <app-blog-item [image]="item.image" [text]="item.text"></app-blog-item>
 </div>
+<!--<nav class="navbar navbar-light bg-light justify-content-between">-->
+  <!--<a class="navbar-brand">Navbar</a>-->
+<form class="form-inline">
+  <input name="text" id="queryParam" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="filterText" >
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  routerLink = "blog" queryParams="{title:queryParam}">Szukaj</button>
+</form>
+<!--</nav>-->
+
+
