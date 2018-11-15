@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, NgModule, OnInit} from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 @Component({
   selector: 'app-contact',
@@ -13,3 +14,8 @@ export class ContactComponent implements OnInit {
   }
 
 }
+@NgModule({
+  imports: [
+    ReactiveFormsModule
+  ]
+})

@@ -9,24 +9,26 @@
           <h3>Uzupełnij dane:</h3>
           <div class="form-group">
             <label for="firstName">Imię:</label>
-            <input type="text" class="form-control" id="firstName" placeholder="Podaj imię">
+            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Podaj imię" required minlength="2" required="">
+            <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger" required="">Podaj imię</div>
           </div>
           <div class="form-group">
             <label for="lastName">Nazwisko:</label>
-            <input type="text" class="form-control" id="lastName" placeholder="Podaj nazwisko">
+            <input type="text" class="form-control" id="lastName" placeholder="Podaj nazwisko" required minlength="2" required="">
+            <div *ngIf="lastName.invalid" class="alert alert-danger">Podaj nazwisko</div>
           </div>
           <div class="form-group">
             <label for="email">E-mail:</label>
             <input type="email" class="form-control" id="email" placeholder="Podaj e-mail">
+            <div *ngIf="email.invalid" class="alert alert-danger" required="">Podaj poprawny email</div>
           </div>
           <legend class="col-form-label">Płeć</legend>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="male" id="male" value="option1">
             <label class="form-check-label" for="male">Mężczyzna</label>
-          </div>
-          <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="female" id="female" value="option2">
             <label class="form-check-label" for="female">Kobieta</label>
+            <div *ngIf="male.checked || female.checked" class="alert alert-danger" required="">Zaznacz jedną z wartości</div>
           </div>
 
           <div class="form-group">
@@ -35,7 +37,8 @@
           </div>
           <div class="age">
             <label for="formGroupExampleInput">Wiek:</label>
-            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="">
+            <input type="number" class="form-control" id="formGroupExampleInput" name="age" placeholder="">
+            <div *ngIf="age <1" class="alert alert-danger" required="">Podaj poprawny wiek</div>
           </div>
           <div class="state">
             <label for="inputState">Stan cywilny</label>
