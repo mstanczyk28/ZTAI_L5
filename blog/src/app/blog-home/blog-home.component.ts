@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogHomeComponent implements OnInit {
   filterText: string;
+
   constructor() { }
 
   ngOnInit() {

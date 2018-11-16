@@ -7,13 +7,14 @@
 <!--</div>-->
 
 <form class="form-inline">
-  <input name="text" id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="filterText" placeholder="Wpisz nazwę ..." >
+  <input name="text" id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="filterText" placeholder="Wpisz nazwę ..." (ngModelChange)="setQuery(filterText)" >
   <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  routerLink = "blog" queryParams="{'title':search}">Szukaj</button>
 </form>
 
 <div *ngFor="let item of items | filter:filterText">
-  <app-blog-item [image]="item" ></app-blog-item>
-  <!--<products-list-item [product] = "item"></products-list-item>-->
+  <!--<app-blog-item [image]="item.url" [text]="item.title" | summary:35 (click)="newValues(item.title, item.url, items.indexOf(item))"></app-blog-item>-->
+  <app-blog-item [image]="item.url" [text]="item.title" ></app-blog-item>
+
 </div>
 
 

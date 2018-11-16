@@ -39,16 +39,8 @@ const appRoutes: Routes = [
     component: BlogComponent
   },
   {
-    path: 'blog-item-deatil',
+    path: 'blog/deatil/:id',
     component: BlogItemDetailComponent
-  },
-  {
-    path: 'blog-item',
-    component: BlogItemComponent
-  },
-  {
-    path: 'blog-item-text',
-    component: BlogItemTextComponent
   }];
 
 

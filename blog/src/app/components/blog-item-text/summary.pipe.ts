@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SummaryPipe implements PipeTransform {
 
   transform(value: string, limit: any): any {
-    if(value){
+    if(!value){
       return null;
     }
     return value.substr(0, limit)+'_';
