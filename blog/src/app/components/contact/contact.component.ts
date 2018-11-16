@@ -1,5 +1,5 @@
 import {Component, NgModule, OnInit} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms'
 
 @Component({
   selector: 'app-contact',
@@ -8,14 +8,20 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 })
 export class ContactComponent implements OnInit {
 
+  form: FormGroup;
   constructor() { }
 
   ngOnInit() {
+    this.form = new FormGroup({
+      firstName: new FormControl( '',Validators.required),
+      lastName: new FormControl('',Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      sex: new FormControl('', Validators.required),
+      message: new FormControl('', [Validators.maxLength(50)]),
+      age: new FormControl('', Validators.required),
+      state: new FormControl('', Validators.required),
+    });
   }
 
 }
-@NgModule({
-  imports: [
-    ReactiveFormsModule
-  ]
-})
+

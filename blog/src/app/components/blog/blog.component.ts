@@ -8,14 +8,17 @@ import {DataService} from "../../services/data-service.service";
 })
 
 export class BlogComponent implements OnInit {
-  filterText : string;
-  items : any;
-  constructor(private dataService:DataService) { }
+
+  @Input ('filterText')  filterText : string;
+  // filterText : string;
+  // items : any;
+  constructor(/*private dataService:DataService*/) { }
 
   ngOnInit() {
-    this.dataService.getAll().subscribe(result=>{
-      this.items=result;
-    });
+    // this.dataService.getAll().subscribe(result=>{
+    //   this.items=result;
+    // });
   }
+
 
 }

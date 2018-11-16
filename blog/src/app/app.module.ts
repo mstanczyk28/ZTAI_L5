@@ -16,7 +16,10 @@ import {HttpClientModule} from "@angular/common/http";
 import { FilterPipe } from './pipes/filter.pipe';
 import {DataService} from "./services/data-service.service";
 import { BlogItemDetailComponent } from './components/blog-item-detail/blog-item-detail.component';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { BlogHomeComponent } from './blog-home/blog-home.component';
+import { TextFormatDirective } from './directives/text-format.directive'
 
 const appRoutes: Routes = [
   {
@@ -61,7 +64,10 @@ const appRoutes: Routes = [
     BlogItemTextComponent,
     BlogItemImageComponent,
     FilterPipe,
-    BlogItemDetailComponent
+    BlogItemDetailComponent,
+    SearchBarComponent,
+    BlogHomeComponent,
+    TextFormatDirective
   ],
   imports: [
     BrowserModule,

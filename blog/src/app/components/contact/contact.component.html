@@ -5,7 +5,7 @@
   <section id="main-content">
     <section class="wrapper">
       <div class="contact-form">
-        <form>
+        <form [formGroup]="form">
           <h3>Uzupełnij dane:</h3>
           <div class="form-group">
             <label for="firstName">Imię:</label>
@@ -32,8 +32,8 @@
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">Wiadomość</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="message">Wiadomość</label>
+            <textarea class="form-control" id="message" rows="3"></textarea>
           </div>
           <div class="age">
             <label for="formGroupExampleInput">Wiek:</label>
