@@ -27,9 +27,13 @@ export class BlogComponent implements OnInit {
     });
   }
 
-  newValues(text, image, id){
-    this.dataService.changeImage(image);
-    this.dataService.changeText(text);
+  // newValues(text, image, id){
+  //   this.dataService.changeImage(image);
+  //   this.dataService.changeText(text);
+  //   this.router.navigate(['/blog/detail/', id]);
+  // }
+
+  toDetails(id) {
     this.router.navigate(['/blog/detail/', id]);
   }
 

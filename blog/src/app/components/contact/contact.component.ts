@@ -13,8 +13,8 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
-      firstName: new FormControl( '',[Validators.required, Validators.pattern("[a-zA-Z]+")]),
-      lastName: new FormControl('',[Validators.required, Validators.pattern("[a-zA-Z]+")]),
+      firstName: new FormControl( '',[Validators.required, Validators.pattern("[a-zA-Ząćęłńóśźż]+")]),
+      lastName: new FormControl('',[Validators.required, Validators.pattern("[a-zA-Ząćęłńóśźż]+")]),
       email: new FormControl('', [Validators.required, Validators.email]),
       sex: new FormControl('', Validators.required),
       message: new FormControl('', [Validators.maxLength(50)]),
