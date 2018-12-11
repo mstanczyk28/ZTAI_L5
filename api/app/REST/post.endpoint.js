@@ -1,5 +1,6 @@
 'use strict';
 import business from '../bussiness/business.container';
+import applicationException from "../service/applicationException";
 
 
 const postEndpoint = (router) => {
@@ -8,7 +9,7 @@ const postEndpoint = (router) => {
             let result = await business(request).getPostManager().query();
                 response.status(200).send(result);
         } catch (error) {
-            // applicationException.errorHandler(error, response);
+            applicationException.errorHandler(error, response);
             console.log(error);
         }
     });
@@ -18,8 +19,8 @@ const postEndpoint = (router) => {
             let result = await business(request).getPostManager().get(request.params.id);
             response.status(200).send(result);
         } catch (error) {
-            // applicationException.errorHandler(error, response);
-            console.log(error);
+            applicationException.errorHandler(error, response);
+            // console.log(error);
         }
     });
 
@@ -28,8 +29,8 @@ const postEndpoint = (router) => {
             let result = await business(request).getPostManager().createNewOrUpdate(request.body);
             response.status(200).send(result);
         } catch (error) {
-            // applicationException.errorHandler(error, response);
-            console.log(error);
+            applicationException.errorHandler(error, response);
+            // console.log(error);
         }
     });
 };

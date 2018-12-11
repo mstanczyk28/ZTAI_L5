@@ -48,7 +48,7 @@ function createNewOrUpdate(data) {
     }).catch(error => {
         if ('ValidationError' === error.name) {
             error = error.errors[Object.keys(error.errors)[0]];
-            // throw applicationException.new(applicationException.BAD_REQUEST, error.message);
+            throw applicationException.new(applicationException.BAD_REQUEST, error.message);
         }
         throw error;
     });

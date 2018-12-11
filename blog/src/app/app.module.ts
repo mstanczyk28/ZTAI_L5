@@ -21,11 +21,11 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { BlogHomeComponent } from './blog-home/blog-home.component';
 import { TextFormatDirective } from './directives/text-format.directive';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
-import { BlogCreateComponent } from './components/blog-create/blog-create.component'
+import { BlogCreateComponent } from './components/blog-create/blog-create.component';
 
 const appRoutes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponentComponent,
   },
   {
