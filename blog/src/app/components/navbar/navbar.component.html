@@ -1,10 +1,25 @@
-<header class="header black-bg">
-  <div class="nav notify-row" id="top_menu">
-    <ul class="nav navbar-header">
-      <li><a routerLink="home" class="logo"><b><span>STRONA GŁÓWNA</span></b></a></li>
-      <li><a routerLink="blog" class="logo"><b>Blog</b></a></li>
-      <li><a routerLink="quiz" class="logo"><b>Quiz</b></a></li>
-      <li><a routerLink="contact" class="logo"><b>Kontakt</b></a></li>
-    </ul>
+<header class="short-header">
+  <div class="gradient-block"></div>
+  <div class="row header-content">
+
+    <nav id="main-nav-wrap">
+      <ul class="main-navigation sf-menu">
+        <li class="current"><a routerLink="home" title="">Strona główna</a></li>
+        <li class="has-children">
+          <a routerLink="blog">Blog</a>
+          <ul class="sub-menu">
+            <li><a routerLink="blog">Przeglądaj</a></li>
+            <li><a routerLink="blog/create">Dodaj</a></li>
+          </ul>
+        </li>
+        <li><a routerLink="quiz" title="">Quiz</a></li>
+        <li><a routerLink="contact" title="">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="triggers">
+      <a class="menu-toggle" href="#"><span>Menu</span></a>
+    </div>
+
   </div>
 </header>

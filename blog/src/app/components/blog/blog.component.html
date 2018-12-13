@@ -1,22 +1,39 @@
-<p> eloeleeldfksfsdfjsdfdfdskfdkf</p>
-<h1> eloeleeldfksfsdfjsdfdfdskfdkf</h1>
+<section id="bricks" class="with-top-sep">
+  <div class="row masonry">
+    <div class="bricks-wrapper">
+      <div class="grid-sizer"></div>
 
+      <div class="row">
+        <div class="col-six tab-full">
+          <div class="form-field">
+            <input name="text" id="search" class="fa-text-width" type="text" [(ngModel)]="filterText" placeholder="Szukaj po tytule ..." (ngModelChange)="setQuery(filterText)" >
+            <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit"  routerLink = "blog" queryParams="{'title':search}">Szukaj</button>-->
+          </div>
+        </div>
 
-<!--<div *ngFor="let item of items | filter:filterText">-->
-  <!--<app-blog-item [image]="item.image" [text]="item.text"></app-blog-item>-->
-<!--</div>-->
+        <div class="col-six tab-full">
+          <button class="btn btn-primary pull-right" routerLink="/blog/create" type="button">Nowy post</button>
+        </div>
+      </div>
 
-<form class="form-inline">
-  <input name="text" id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="filterText" placeholder="Wpisz nazwę ..." (ngModelChange)="setQuery(filterText)" >
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  routerLink = "blog" queryParams="{'title':search}">Szukaj</button>
-</form>
+      <div *ngFor="let item of items | filter:filterText">
+      <article class="brick entry format-standard animate-this">
 
-<button class="btn btn-primary" routerLink="/blog/create" type="button">Nowy post</button>
+        <div class="entry-thumb">
+          <app-blog-item [image]="item.url" (click)="toDetails(item.id)"></app-blog-item>
+        </div>
 
-<div *ngFor="let item of items | filter:filterText">
-  <!--<app-blog-item [image]="item.url" [text]="item.title" | summary:35 (click)="newValues(item.title, item.url, items.indexOf(item))"></app-blog-item>-->
-  <app-blog-item [image]="item.url" [text]="item.title" (click)="toDetails(item.id)"></app-blog-item>
+        <div class="entry-text">
+          <div class="entry-header">
+            <h1 class="entry-title"><app-blog-item [text]="item.title" (click)="toDetails(item.id)"></app-blog-item></h1>
+          </div>
+          <!--<div class="entry-excerpt">-->
+            <!--Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.-->
+          <!--</div>-->
+        </div>
 
-</div>
-
-
+      </article>
+      </div>
+    </div>
+  </div>
+</section>

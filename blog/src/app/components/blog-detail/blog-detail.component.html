@@ -1,8 +1,21 @@
-<p> eloeleeldfksfsdfjsdfdfdskfdkf</p>
-<h1> eloeleeldfksfsdfjsdfdfdskfdkf</h1>
+<section id="content-wrap" class="blog-single">
+  <div class="row">
+    <div class="col-twelve">
 
-<!--{{id}}-->
-<!--{{post.title}}-->
-<!--{{post.content}}-->
-<app-blog-item-image [image]="post.url"></app-blog-item-image>
-<app-blog-item-text [text]="post.content"></app-blog-item-text>
+      <article class="format-standard">
+
+        <div class="content-media">
+          <div class="post-thumb">
+            <app-blog-item-image [image]="post.url"></app-blog-item-image>
+          </div>
+        </div>
+
+        <div class="primary-content">
+          <h1 class="page-title"><app-blog-item-text [text]="post.title"></app-blog-item-text></h1>
+          <p class="lead"><app-blog-item-text [text]="post.content"></app-blog-item-text></p>
+        </div>
+
+      </article>
+    </div>
+  </div>
+</section>

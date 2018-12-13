@@ -18,7 +18,7 @@ export class ContactComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       sex: new FormControl('', Validators.required),
       message: new FormControl('', [Validators.maxLength(50)]),
-      age: new FormControl('', Validators.required),
+      age: new FormControl('', [Validators.required, Validators.min(0), Validators.max(150)]),
       state: new FormControl('', Validators.required),
     });
   }

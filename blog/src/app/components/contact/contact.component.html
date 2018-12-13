@@ -1,66 +1,63 @@
-<section id="container">
+<section id="content-wrap" class="site-page">
+  <div class="row">
+    <div class="col-twelve">
+    <section>
+      <div class="primary-content">
 
-  <section id="main-content">
-    <section class="wrapper">
-      <div class="contact-form">
-        <div class="row mt">
-          <div class="col-lg-12">
-            <div class="form-panel">
-        <form [formGroup]="form">
-          <h3>Uzupełnij dane:</h3>
-          <div class="form-group">
-            <label for="firstName">Imię:</label>
-            <input formControlName="firstName" type="text" class="form-control" id="firstName" name="firstName" placeholder="Podaj imię" required minlength="2" required="">
-            <div *ngIf="form.get('firstName').touched && form.get('firstName').invalid" class="alert alert-danger" required="">Wpisz poprawne imię</div>
-          </div>
-          <div class="form-group">
-            <label for="lastName">Nazwisko:</label>
-            <input formControlName="lastName" type="text" class="form-control" id="lastName" placeholder="Podaj nazwisko" required minlength="2" required="">
-            <div *ngIf="form.get('lastName').touched && form.get('lastName').invalid" class="alert alert-danger">Wpisz poprawne nazwisko</div>
-          </div>
-          <div class="form-group">
-            <label for="email">E-mail:</label>
-            <input formControlName="email" type="email" class="form-control" id="email" placeholder="Podaj e-mail">
-            <div *ngIf="form.get('email').touched && form.get('email').invalid" class="alert alert-danger" required="">Podaj poprawny email</div>
+        <form [formGroup]="form" name="cForm" id="cForm">
+          <h1 class="entry-title add-bottom">UZUPEŁNIJ DANE</h1>
+          <fieldset>
+
+          <div class="form-filed">
+            <div *ngIf="form.get('firstName').touched && form.get('firstName').invalid" class="ss-error" required="">Wpisz poprawne imię</div>
+            <input formControlName="firstName" type="text" class="full-width" id="firstName" name="firstName" placeholder="Imię..." required minlength="2" required="">
           </div>
 
-          <label>Wybierz płeć:</label>
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-            <label class="custom-control-label" for="customRadioInline1">Kobieta</label>
-          </div>
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-            <label class="custom-control-label" for="customRadioInline2">Mężczyzna</label>
+          <div class="form-filed">
+            <div *ngIf="form.get('lastName').touched && form.get('lastName').invalid" class="ss-error">Wpisz poprawne nazwisko</div>
+            <input formControlName="lastName" type="text" class="full-width" id="lastName" placeholder="Nazwisko..." required minlength="2" required="">
           </div>
 
-          <div class="form-group">
-            <label for="message">Wiadomość</label>
-            <textarea formControlName="message" class="form-control" id="message" rows="3"></textarea>
+          <div class="form-filed">
+            <div *ngIf="form.get('email').touched && form.get('email').invalid" class="ss-error" required="">Podaj poprawny email</div>
+            <input formControlName="email" type="email" class="full-width" id="email" placeholder="E-mail...">
           </div>
-          <div class="age">
-            <label for="formGroupExampleInput">Wiek:</label>
-            <input formControlName="age" type="number" class="form-control" id="formGroupExampleInput" name="age" min="0"placeholder="">
-            <div *ngIf="form.get('age').touched && form.get('age').invalid" class="alert alert-danger" required="">Podaj poprawny wiek</div>
+
+          <label class="add-bottom">
+            <input type="radio" id="woman" name="sex">
+            <span class="label-text">Kobieta</span>
+          </label>
+          <label class="add-bottom">
+            <input type="radio" id="man" name="sex">
+            <span class="label-text">Mężczyzna</span>
+          </label>
+
+          <div class="message form-filed">
+            <textarea formControlName="message" class="full-width" id="message" placeholder="Treść wiadomości..." rows="3"></textarea>
           </div>
-          <div class="state">
-            <label for="inputState">Stan cywilny</label>
-            <select formControlName="inputState" id="inputState" class="form-control">
+
+          <div class="form-filed">
+            <div *ngIf="form.get('age').touched && form.get('age').invalid" class="ss-error" required="">Podaj poprawny wiek</div>
+            <input formControlName="age" type="number" class="full-width" id="formGroupExampleInput" name="age" min="0" placeholder="Wiek">
+          </div>
+
+          <div class="form-filed">
+            <select formControlName="inputState" id="inputState" class="full-width" placeholder="Stan cywilny" class="full-width">
               <option></option>
               <option>panna/kawaler</option>
               <option>mężatka/żonaty</option>
               <option>wdowa/wdowiec</option>
             </select>
           </div>
-          <div class="form-group">
-            <div class="col-lg-offset-2 col-lg-10">
-              <button class="btn btn-theme04 pull-left" type="button">Cancel</button>
-              <button class="btn btn-theme pull-right" type="submit">Save</button>
-            </div>
-          </div>
-        </form>
-            </div></div></div></div>
-    </section>
-  </section>
 
+          <button class="btn btn-theme04 pull-left" onclick="document.getElementById(firstName).value = ''" type="button">Anuluj</button>
+          <button class="submit button-primary pull-right" type="submit">Zapisz</button>
+
+          </fieldset>
+        </form>
+      </div>
+      </section>
+    </div>
+  </div>
 </section>
+
