@@ -17,7 +17,8 @@
       </div>
 
       <div *ngFor="let item of items | filter:filterText">
-      <article class="brick entry format-standard animate-this">
+
+        <article class="brick entry format-standard animate-this">
 
         <div class="entry-thumb">
           <app-blog-item [image]="item.url" (click)="toDetails(item.id)"></app-blog-item>
@@ -31,8 +32,7 @@
             <!--Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.-->
           <!--</div>-->
         </div>
-
-      </article>
+        </article>
       </div>
     </div>
   </div>
