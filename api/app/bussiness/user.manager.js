@@ -17,11 +17,11 @@ function create(context) {
         const user = await UserDAO.getByEmailOrName(name);
         if (!user) {
             throw applicationException.new(applicationException.UNAUTHORIZED, 'User with that email does not exist');
-            console.log('User with that email does not exist');
+            // console.log('User with that email does not exist');
         }
         if (!user.active) {
             throw applicationException.new(applicationException.NOT_FOUND, 'User does not exist or does not active');
-            console.log('User does not exist or does not active');
+            // console.log('User does not exist or does not active');
         }
         userData = await user;
         await PasswordDAO.authorize(user.id, hashString(password));
@@ -44,11 +44,11 @@ function create(context) {
         if (await userData.password) {
             const email = {
                 to: user.email,
-                subject: messages.ACTIVATION,
-                message: messages.MESSAGE,
+                // subject: messages.ACTIVATION,
+                // message: messages.MESSAGE,
                 hash: user.activationHash
             };
-            await mailSender.send(email, true);
+            // await mailSender.send(email, true);
             return await PasswordDAO.createOrUpdate({userId: user.id, password: hashString(userData.password)});
         } else {
             return user;

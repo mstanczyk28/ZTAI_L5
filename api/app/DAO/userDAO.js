@@ -33,8 +33,8 @@ function createNewOrUpdate(user) {
     return Promise.resolve().then(() => {
         if (!user.id) {
             return new UserModel(user).save().then(result => {
-                if (result[0]) {
-                    return mongoConverter(result[0]);
+                if (result) {
+                    return mongoConverter(result);
                 }
             });
         } else {
