@@ -12,7 +12,7 @@ import {NavbarComponent} from './components/navbar/navbar.component';
 import {BlogItemComponent} from './components/blog-item/blog-item.component';
 import {BlogItemTextComponent} from './components/blog-item-text/blog-item-text.component';
 import {BlogItemImageComponent} from './components/blog-item-image/blog-item-image.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { FilterPipe } from './pipes/filter.pipe';
 import {DataService} from "./services/data-service.service";
 import { BlogItemDetailComponent } from './components/blog-item-detail/blog-item-detail.component';
@@ -23,6 +23,8 @@ import { TextFormatDirective } from './directives/text-format.directive';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 import { BlogCreateComponent } from './components/blog-create/blog-create.component';
 import {AuthServiceService} from "./services/auth-service.service";
+import {AdminGuardGuard} from "./services/admin-guard.guard";
+import {AuthInterceptor} from "./services/auth.interceptor";
 
 const appRoutes: Routes = [
   {
@@ -39,15 +41,18 @@ const appRoutes: Routes = [
   },
   {
     path: 'blog',
-    component: BlogComponent
+    component: BlogComponent,
+    canActivate: [AdminGuardGuard]
   },
   {
     path: 'blog/detail/:id',
-    component: BlogDetailComponent
+    component: BlogDetailComponent,
+    canActivate: [AdminGuardGuard]
   },
   {
     path: 'blog/create',
-    component: BlogCreateComponent
+    component: BlogCreateComponent,
+    canActivate: [AdminGuardGuard]
   }];
 
 
@@ -78,7 +83,15 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [DataService, AuthServiceService],
+  providers: [
+    DataService,
+    AuthServiceService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
