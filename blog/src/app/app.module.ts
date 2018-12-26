@@ -25,6 +25,8 @@ import { BlogCreateComponent } from './components/blog-create/blog-create.compon
 import {AuthServiceService} from "./services/auth-service.service";
 import {AdminGuardGuard} from "./services/admin-guard.guard";
 import {AuthInterceptor} from "./services/auth.interceptor";
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 const appRoutes: Routes = [
   {
@@ -53,7 +55,16 @@ const appRoutes: Routes = [
     path: 'blog/create',
     component: BlogCreateComponent,
     canActivate: [AdminGuardGuard]
-  }];
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'singup',
+    component: SignupComponent
+  }
+  ];
 
 
 @NgModule({
@@ -73,7 +84,9 @@ const appRoutes: Routes = [
     BlogHomeComponent,
     TextFormatDirective,
     BlogDetailComponent,
-    BlogCreateComponent
+    BlogCreateComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
