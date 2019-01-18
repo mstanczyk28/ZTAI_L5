@@ -1,5 +1,6 @@
-package com.ztai.spring.boot.ztai;
+package com.ztai.spring.boot.ztai.post;
 
+import com.ztai.spring.boot.ztai.post.Post;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
