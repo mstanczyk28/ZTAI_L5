@@ -9,7 +9,7 @@ import {BehaviorSubject} from "rxjs";
 export class DataService {
 
   // private url = 'https://jsonplaceholder.typicode.com';
-  private url = 'http://localhost:3000';
+  private url = 'http://localhost:8080';
   private textSource = new BehaviorSubject('sdssdssd');
   private imageSource = new BehaviorSubject('asaasa');
 

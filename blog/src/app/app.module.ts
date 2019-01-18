@@ -27,6 +27,8 @@ import {AdminGuardGuard} from "./services/admin-guard.guard";
 import {AuthInterceptor} from "./services/auth.interceptor";
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import {AuthenticationService} from "./services/authentication.service";
+import {HttpIntercepterBasicAuthService} from "./services/http/interceptor-auth.service";
 
 const appRoutes: Routes = [
   {
@@ -44,17 +46,17 @@ const appRoutes: Routes = [
   {
     path: 'blog',
     component: BlogComponent,
-    canActivate: [AdminGuardGuard]
+    // canActivate: [AdminGuardGuard]
   },
   {
     path: 'blog/detail/:id',
     component: BlogDetailComponent,
-    canActivate: [AdminGuardGuard]
+    // canActivate: [AdminGuardGuard]
   },
   {
     path: 'blog/create',
     component: BlogCreateComponent,
-    canActivate: [AdminGuardGuard]
+    // canActivate: [AdminGuardGuard]
   },
   {
     path: 'login',
@@ -98,10 +100,10 @@ const appRoutes: Routes = [
   ],
   providers: [
     DataService,
-    AuthServiceService,
+    AuthenticationService, //AuthSeriveceService
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
+      useClass: HttpIntercepterBasicAuthService, //AuthInterceptor
       multi: true
     }
   ],
